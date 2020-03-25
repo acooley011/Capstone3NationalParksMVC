@@ -10,7 +10,7 @@ public class Park {
 	private int numberOfCampsites;
 	private String climate;
 	private int yearFounded;
-	private int anualVisitorCount;
+	private int annualVisitorCount;
 	private String inspirationalQuote;
 	private String inspirationalQuoteSource;
 	private String parkDescription;
@@ -71,11 +71,11 @@ public class Park {
 	public void setYearFounded(int yearFounded) {
 		this.yearFounded = yearFounded;
 	}
-	public int getAnualVisitorCount() {
-		return anualVisitorCount;
+	public int getAnnualVisitorCount() {
+		return annualVisitorCount;
 	}
-	public void setAnualVisitorCount(int anualVisitorCount) {
-		this.anualVisitorCount = anualVisitorCount;
+	public void setAnnualVisitorCount(int anualVisitorCount) {
+		this.annualVisitorCount = anualVisitorCount;
 	}
 	public String getInspirationalQuote() {
 		return inspirationalQuote;
