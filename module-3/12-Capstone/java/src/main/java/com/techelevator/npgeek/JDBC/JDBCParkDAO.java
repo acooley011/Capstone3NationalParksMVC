@@ -36,7 +36,7 @@ public class JDBCParkDAO implements ParkDAO {
 			nextPark.setState(results.getString("state"));
 			nextPark.setAcreage(results.getInt("acreage"));
 			nextPark.setElevationInFeet(results.getInt("elevationinfeet"));
-			nextPark.setMilesOfTrail(results.getLong("milesoftrail"));
+			nextPark.setMilesOfTrail(results.getFloat("milesoftrail"));
 			nextPark.setNumberOfCampsites(results.getInt("numberofcampsites"));
 			nextPark.setClimate(results.getString("climate"));
 			nextPark.setYearFounded(results.getInt("yearfounded"));
@@ -65,7 +65,7 @@ public class JDBCParkDAO implements ParkDAO {
 			park.setState(results.getString("state"));
 			park.setAcreage(results.getInt("acreage"));
 			park.setElevationInFeet(results.getInt("elevationinfeet"));
-			park.setMilesOfTrail(results.getLong("milesoftrail"));
+			park.setMilesOfTrail(results.getFloat("milesoftrail"));
 			park.setNumberOfCampsites(results.getInt("numberofcampsites"));
 			park.setClimate(results.getString("climate"));
 			park.setYearFounded(results.getInt("yearfounded"));
