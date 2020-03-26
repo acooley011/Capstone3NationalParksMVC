@@ -76,10 +76,53 @@ li {
 }
 
 .home-description {
-	font-size: 17px; 
+	font-size: 16px; 
 	line-height: 1.5em;
 }
 
-.radiobutton {
-	
+
+.activity-level {
+	padding-bottom: 155px; 
+	display: grid;
+	align-items: start;
+	width: 100%;
+	grid-template-columns: 50% 40%;
+	grid-row-gap: 10px;
+	background-color: #edf2f5;
+	color: #444;
 }
+}
+
+form:radiobutton {
+	display: inline;
+}
+
+form:label {
+	border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 260px;
+}
+
+.radio {
+	display: inline;
+}
+
+input[type=text] {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 260px;
+}
+
+#submit {
+    padding:5px 15px; 
+    background: #3d3d3d;
+    color: white;
+    border:0 none;
+    cursor:pointer;
+    border-radius: 5px;
+}
+
+.errors {
+	color: red;
+}
+
