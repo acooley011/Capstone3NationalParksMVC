@@ -21,7 +21,7 @@ import com.techelevator.npgeek.SurveyResultDAO;
 @Controller
 public class SurveyPageController {
 	
-	static final String MODEL_KEY_PREFIX = "surveyResult";
+	//static final String MODEL_KEY_PREFIX = "surveyResult";
 	
 	@Autowired
 	ParkDAO parkDao;
@@ -53,15 +53,16 @@ public class SurveyPageController {
 	        flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + 
 	                "surveyResult", result);
 	        
-			List<Park> parks = parkDao.getAllParks();		
-			model.addAttribute("parks", parks);
-	        
 	        return "redirect:/survey";
 	    }
 		
-		flash.addFlashAttribute("message", "You have successfully registered");
 		
 		return "redirect:/favorite-parks";
+		
+	
+	 
+	  
+		
 	}
 
 }

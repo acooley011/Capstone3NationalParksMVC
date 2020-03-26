@@ -11,12 +11,12 @@
 	
 		<div>
 			<form:label path="parkCode">Favorite National Park:</form:label>
-			<select id="parkCode" name="parkCode" size="1">		
-				<option value=""></option>	
+			<form:select path="parkCode" name="parkCode" size="1">		
+				<form:option value=""></form:option>	
 				<c:forEach items="${parks}" var="park">
-					<option value="${park.parkCode}">${park.parkName}</option>
+					<form:option value="${park.parkCode}">${park.parkName}</form:option>
 				</c:forEach>
-			</select>
+			</form:select>
 			<form:errors path="parkCode"/><br><br>
 		</div>
 			
@@ -28,69 +28,68 @@
 		
 		<div>
 			<form:label path="state">State of Residence:</form:label>
-			<select>
-				<option value=""></option>
-				<option value="AL">Alabama</option>
-				<option value="AK">Alaska</option>
-				<option value="AZ">Arizona</option>
-				<option value="AR">Arkansas</option>
-				<option value="CA">California</option>
-				<option value="CO">Colorado</option>
-				<option value="CT">Connecticut</option>
-				<option value="DE">Delaware</option>
-				<option value="DC">District Of Columbia</option>
-				<option value="FL">Florida</option>
-				<option value="GA">Georgia</option>
-				<option value="HI">Hawaii</option>
-				<option value="ID">Idaho</option>
-				<option value="IL">Illinois</option>
-				<option value="IN">Indiana</option>
-				<option value="IA">Iowa</option>
-				<option value="KS">Kansas</option>
-				<option value="KY">Kentucky</option>
-				<option value="LA">Louisiana</option>
-				<option value="ME">Maine</option>
-				<option value="MD">Maryland</option>
-				<option value="MA">Massachusetts</option>
-				<option value="MI">Michigan</option>
-				<option value="MN">Minnesota</option>
-				<option value="MS">Mississippi</option>
-				<option value="MO">Missouri</option>
-				<option value="MT">Montana</option>
-				<option value="NE">Nebraska</option>
-				<option value="NV">Nevada</option>
-				<option value="NH">New Hampshire</option>
-				<option value="NJ">New Jersey</option>
-				<option value="NM">New Mexico</option>
-				<option value="NY">New York</option>
-				<option value="NC">North Carolina</option>
-				<option value="ND">North Dakota</option>
-				<option value="OH">Ohio</option>
-				<option value="OK">Oklahoma</option>
-				<option value="OR">Oregon</option>
-				<option value="PA">Pennsylvania</option>
-				<option value="RI">Rhode Island</option>
-				<option value="SC">South Carolina</option>
-				<option value="SD">South Dakota</option>
-				<option value="TN">Tennessee</option>
-				<option value="TX">Texas</option>
-				<option value="UT">Utah</option>
-				<option value="VT">Vermont</option>
-				<option value="VA">Virginia</option>
-				<option value="WA">Washington</option>
-				<option value="WV">West Virginia</option>
-				<option value="WI">Wisconsin</option>
-				<option value="WY">Wyoming</option>
-				<option value="AS">American Samoa</option>
-				<option value="GU">Guam</option>
-				<option value="MP">Northern Mariana Islands</option>
-				<option value="PR">Puerto Rico</option>
-				<option value="UM">United States Minor Outlying Islands</option>
-				<option value="VI">Virgin Islands</option>
-				<option value="AA">Armed Forces Americas</option>
-				<option value="AP">Armed Forces Pacific</option>
-				<option value="AE">Armed Forces Others</option>					
-			</select>
+			<form:select path="state" name="state">
+				<form:option value=""></form:option>
+				<form:option value="AL">Alabama</form:option>
+				<form:option value="AK">Alaska</form:option>
+				<form:option value="AZ">Arizona</form:option>
+				<form:option value="AR">Arkansas</form:option>
+				<form:option value="CA">California</form:option>
+				<form:option value="CO">Colorado</form:option>
+				<form:option value="CT">Connecticut</form:option>
+				<form:option value="DE">Delaware</form:option>
+				<form:option value="DC">District Of Columbia</form:option>
+				<form:option value="FL">Florida</form:option>
+				<form:option value="GA">Georgia</form:option>
+				<form:option value="HI">Hawaii</form:option>
+				<form:option value="ID">Idaho</form:option>
+				<form:option value="IL">Illinois</form:option>
+				<form:option value="IN">Indiana</form:option>
+				<form:option value="IA">Iowa</form:option>
+				<form:option value="KS">Kansas</form:option>
+				<form:option value="KY">Kentucky</form:option>
+				<form:option value="LA">Louisiana</form:option>
+				<form:option value="ME">Maine</form:option>
+				<form:option value="MD">Maryland</form:option>
+				<form:option value="MA">Massachusetts</form:option>
+				<form:option value="MI">Michigan</form:option>
+				<form:option value="MN">Minnesota</form:option>
+				<form:option value="MS">Mississippi</form:option>
+				<form:option value="MO">Missouri</form:option>
+				<form:option value="MT">Montana</form:option>
+				<form:option value="NE">Nebraska</form:option>
+				<form:option value="NV">Nevada</form:option>
+				<form:option value="NH">New Hampshire</form:option>
+				<form:option value="NM">New Mexico</form:option>
+				<form:option value="NY">New York</form:option>
+				<form:option value="NC">North Carolina</form:option>
+				<form:option value="ND">North Dakota</form:option>
+				<form:option value="OH">Ohio</form:option>
+				<form:option value="OK">Oklahoma</form:option>
+				<form:option value="OR">Oregon</form:option>
+				<form:option value="PA">Pennsylvania</form:option>
+				<form:option value="RI">Rhode Island</form:option>
+				<form:option value="SC">South Carolina</form:option>
+				<form:option value="SD">South Dakota</form:option>
+				<form:option value="TN">Tennessee</form:option>
+				<form:option value="TX">Texas</form:option>
+				<form:option value="UT">Utah</form:option>
+				<form:option value="VT">Vermont</form:option>
+				<form:option value="VA">Virginia</form:option>
+				<form:option value="WA">Washington</form:option>
+				<form:option value="WV">West Virginia</form:option>
+				<form:option value="WI">Wisconsin</form:option>
+				<form:option value="WY">Wyoming</form:option>
+				<form:option value="AS">American Samoa</form:option>
+				<form:option value="GU">Guam</form:option>
+				<form:option value="MP">Northern Mariana Islands</form:option>
+				<form:option value="PR">Puerto Rico</form:option>
+				<form:option value="UM">United States Minor Outlying Islands</form:option>
+				<form:option value="VI">Virgin Islands</form:option>
+				<form:option value="AA">Armed Forces Americas</form:option>
+				<form:option value="AP">Armed Forces Pacific</form:option>
+				<form:option value="AE">Armed Forces Others</form:option>					
+			</form:select>
 			<form:errors path="state"/>	<br><br>
 		</div>
 		
