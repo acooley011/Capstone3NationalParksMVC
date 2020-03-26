@@ -6,7 +6,8 @@
 <div class="body-content">
 	<div>
 		<c:url value="/img/parks/${park.parkCode.toLowerCase()}.jpg" var="parkPic" />
-		    	<img class="park-picture" src="${parkPic}">
+		    	<img class="park-picture-details" src="${parkPic}">
+		    	
 		    	<div class="description">
 		    	
 		    		<h1 class="home-name">${park.parkName}</h1>
@@ -26,7 +27,7 @@
 		    		
 		    	</div>
 		    	<div class="weather">
-		    		<h1>Weather Forecast for ${park.parkName}</h1>
+		    		<h1 class="home-name">Weather Forecast for ${park.parkName}</h1>
 		    		<c:forEach var= "weather" items="${weathers }">
 		    			<c:choose>
 		    				<c:when test="${weather.fiveDayForecastValue == 1}">

@@ -116,4 +116,10 @@
 	
 </div>
 
+<label class="switch">
+    <input class="switch-input" type="checkbox" />
+    <span class="switch-label" data-on="On" data-off="Off"></span> 
+    <span class="switch-handle"></span> 
+</label>
+
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />
