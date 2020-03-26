@@ -27,8 +27,11 @@
 		    	</div>
 		    	<div class="weather">
 		    		<h1>Weather Forecast for ${park.parkName}</h1>
+		    		<input id="example-checkbox" type="checkbox">
+						<label for="example" id="example">Fahrenheit</label>
 		    		<c:forEach var= "weather" items="${weathers }">
 		    			<c:choose>
+		    			<c:if test="button is clicked"></c:if>
 		    				<c:when test="${weather.fiveDayForecastValue == 1}">
 		    					<p>Monday Low: ${weather.low }</p>
 		    					<p> High: ${weather.high }</p>

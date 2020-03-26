@@ -10,6 +10,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.techelevator.npgeek.Park;
 import com.techelevator.npgeek.ParkDAO;
 import com.techelevator.npgeek.Weather;
@@ -25,10 +27,13 @@ public class ParkDetailsController {
 	WeatherDAO weatherDAO;
 
 	@RequestMapping(path="/park-details/{parkName}", method=RequestMethod.GET)
-	public String displayParkDetails(HttpServletRequest request, @PathVariable String parkName, ModelMap model) {
+	public String displayParkDetails(HttpServletRequest request, @PathVariable String parkName, ModelMap model,
+			@RequestParam String toggle) {
 		
 		Park park = parkDao.getParkInfoFromName(parkName);
 		List<Weather> weathers = weatherDAO.getWeatherFromPark(park.getParkCode());
+		
+		if(toggle.)
 		
 		model.addAttribute("park", park);
 		model.addAttribute("weathers", weathers);

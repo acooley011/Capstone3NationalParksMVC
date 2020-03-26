@@ -35,31 +35,12 @@ public class JDBCSurveyResultDAO implements SurveyResultDAO {
 		
 	}
 
-//	@Override
-//	public List<SurveyResult> allSurveys() {
-//		List<SurveyResult> allSurveys = new ArrayList<>();
-//		String sqlGetAllSurveys = "SELECT * FROM survey_result GROUP BY parkcode, "
-//				+ "surveyid";
-//		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetAllSurveys);
-//		
-//		while(results.next()) {
-//			SurveyResult nextSurvey = new SurveyResult();
-//			nextSurvey.setSurveyId(results.getInt("surveyid"));
-//			nextSurvey.setParkCode(results.getString("parkcode"));
-//			nextSurvey.setEmailAddress(results.getString("emailaddress"));
-//			nextSurvey.setState(results.getString("state"));
-//			nextSurvey.setActivityLevel(results.getString("activitylevel"));
-//			allSurveys.add(nextSurvey);
-//			
-//		}
-//		
-//		return allSurveys;
-//	}
-
 	@Override
 	public Map<Park, Integer> favoriteParkCount() {
 		Map<Park, Integer> favoriteParkCount = new HashMap<>();
-		String sqlGetParkCount = "SELECT park.parkname, survey_result.parkcode, COUNT(survey_result.parkcode) FROM survey_result JOIN park ON park.parkcode = survey_result.parkcode GROUP BY survey_result.parkcode, park.parkname"; 
+		String sqlGetParkCount = "SELECT park.parkname, survey_result.parkcode, COUNT(survey_result.parkcode) FROM survey_result JOIN"
+				+ " park ON park.parkcode = survey_result.parkcode GROUP BY survey_result.parkcode, park.parkname ORDER BY survey_result.parkcode, park.parkname";
+	
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetParkCount);
 		
 		while(results.next()) {
@@ -69,7 +50,6 @@ public class JDBCSurveyResultDAO implements SurveyResultDAO {
 			Park park = parkDAO.getParkInfoFromName(parkName);
 			favoriteParkCount.put(park, parkCount);
 		}
-		
 		
 		return favoriteParkCount;
 	}
