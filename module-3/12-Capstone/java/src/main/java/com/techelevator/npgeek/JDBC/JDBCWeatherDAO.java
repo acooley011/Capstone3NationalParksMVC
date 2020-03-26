@@ -1,5 +1,8 @@
 package com.techelevator.npgeek.JDBC;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,18 +24,22 @@ public class JDBCWeatherDAO implements WeatherDAO {
 	}
 
 	@Override
-	public Weather getWeatherFromPark(int parkId) {
-		Weather parkWeather = new Weather();
-		String getParkWeather = "SELECT * FROM park WHERE parkcode = ?";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(getParkWeather, parkId);
+	public List<Weather> getWeatherFromPark(String parkCode) {
+		List<Weather> allParkWeather = new ArrayList<>();
+		String getParkWeather = "SELECT * FROM weather WHERE parkcode = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(getParkWeather, parkCode);
 		
-		parkWeather.setParkCode(results.getString("parkcode"));
-		parkWeather.setFiveDayForcastValue(results.getInt("fivedayforecastvalue"));
-		parkWeather.setLow(results.getInt("low"));
-		parkWeather.setHigh(results.getInt("high"));
-		parkWeather.setForecast(results.getString("forcast"));
+		while(results.next()) {
+			Weather parkWeather = new Weather();
+			parkWeather.setParkCode(results.getString("parkcode"));
+			parkWeather.setFiveDayForecastValue(results.getInt("fivedayforecastvalue"));
+			parkWeather.setLow(results.getInt("low"));
+			parkWeather.setHigh(results.getInt("high"));
+			parkWeather.setForecast(results.getString("forecast"));
+			allParkWeather.add(parkWeather);
+		}
 		
-		return parkWeather;
+		return allParkWeather;
 	}
 
 }

@@ -54,10 +54,10 @@ public class JDBCParkDAO implements ParkDAO {
 	}
 
 	@Override
-	public Park getParkInfoFromId(int parkId) {
+	public Park getParkInfoFromName(String parkName) {
 		Park park = new Park();
-		String sqlGetAllParks = "SELECT * FROM park WHERE parkcode = ?";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetAllParks, parkId);
+		String sqlGetAllParks = "SELECT * FROM park WHERE parkname = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetAllParks, parkName);
 		
 		while(results.next()) {
 			park.setParkCode(results.getString("parkcode"));
@@ -74,9 +74,9 @@ public class JDBCParkDAO implements ParkDAO {
 			park.setInspirationalQuoteSource(results.getString("inspirationalquotesource"));
 			park.setParkDescription(results.getString("parkdescription"));
 			park.setMilesOfTrail(results.getInt("entryfee"));
-			park.setNumberOfAnimalSpecies(results.getInt("numberofanimalspecies"));
+			park.setNumberOfAnimalSpecies(results.getInt("numberofanimalspecies"));		
 		}
-		
+	
 		return park;
 	}
 }
