@@ -1,6 +1,6 @@
 package com.techelevator.npgeek.controllers;
 
-import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,27 +10,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.techelevator.npgeek.Park;
 import com.techelevator.npgeek.ParkDAO;
-import com.techelevator.npgeek.SurveyResult;
 import com.techelevator.npgeek.SurveyResultDAO;
 
 @Controller
 public class FavoriteParksController {
 	
 	@Autowired
-	ParkDAO parkDao;
+	SurveyResultDAO surveyResultDao;
 	
 	@Autowired
-	SurveyResultDAO surveyResultDao;
+	ParkDAO parkDAO;
 
 	@RequestMapping(path="/favorite-parks", method=RequestMethod.GET)
 	public String displayFavoriteParksPage(ModelMap model) {
 		
-		List<Park> parks = parkDao.getAllParks();		
-		model.addAttribute("parks", parks);
-		
-		List<SurveyResult> surveys = surveyResultDao.allSurveys();
-		model.addAttribute("surveys", surveys);
-		
+		Map<Park, Integer> favoritePark = surveyResultDao.favoriteParkCount();		
+		model.addAttribute("favoriteParks", favoritePark);
+				
 		return "/favoriteParks";
 	}
 
