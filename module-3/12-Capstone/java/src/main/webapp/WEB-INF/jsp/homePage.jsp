@@ -3,7 +3,7 @@
 <link href="https://fonts.googleapis.com/css?family=Francois+One&display=swap" rel="stylesheet">
 
 		
-<div class="body-home">
+<div class="body-content">
 
 	<div class="parks-container">
 		<c:forEach items="${parks}" var="park">
