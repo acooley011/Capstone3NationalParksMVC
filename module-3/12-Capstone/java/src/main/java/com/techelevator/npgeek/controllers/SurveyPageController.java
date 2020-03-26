@@ -56,12 +56,14 @@ public class SurveyPageController {
 	        return "redirect:/survey";
 	    }
 		
+		String parkCode = surveyFormValues.getParkCode();
+		String emailAddress = surveyFormValues.getEmailAddress();
+		String state = surveyFormValues.getState();
+		String activityLevel = surveyFormValues.getActivityLevel();
 		
+		surveyResultDao.insertNewSurvey(parkCode, emailAddress, state, activityLevel);
+				
 		return "redirect:/favorite-parks";
-		
-	
-	 
-	  
 		
 	}
 

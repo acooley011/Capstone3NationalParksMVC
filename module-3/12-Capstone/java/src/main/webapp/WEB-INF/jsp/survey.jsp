@@ -96,13 +96,13 @@
 		<div>
 			<p>Activity Level:</p>
 			
-			<form:label path="activityLevel">Low</form:label>
+			<form:label class="radiobutton" path="activityLevel">Low</form:label>
 			<form:radiobutton path="activityLevel" value="Low"/>
 			
-			<form:label path="activityLevel">Moderate</form:label>
+			<form:label class="radiobutton" path="activityLevel">Moderate</form:label>
 			<form:radiobutton path="activityLevel" value="moderate"/>
 			
-			<form:label path="activityLevel">High</form:label>
+			<form:label class="radiobutton" path="activityLevel">High</form:label>
 			<form:radiobutton path="activityLevel" value="high"/>
 			
 			<form:errors path="activityLevel"/><br><br>

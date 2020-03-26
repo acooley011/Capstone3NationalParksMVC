@@ -34,7 +34,8 @@ public class JDBCSurveyResultDAO implements SurveyResultDAO {
 	@Override
 	public List<SurveyResult> allSurveys() {
 		List<SurveyResult> allSurveys = new ArrayList<>();
-		String sqlGetAllSurveys = "SELECT * FROM survey_result GROUP BY parkcode";
+		String sqlGetAllSurveys = "SELECT * FROM survey_result GROUP BY parkcode, "
+				+ "surveyid";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetAllSurveys);
 		
 		while(results.next()) {
