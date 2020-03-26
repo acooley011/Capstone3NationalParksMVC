@@ -5,9 +5,8 @@
 
 <div class="body-content">
 
-	
 	<c:url value="/survey" var="surveyURL"/>
-	<form:form action="${surveyURL}" method="POST" modelAttribute="surveyResult">
+	<form:form class="form" action="${surveyURL}" method="POST" modelAttribute="surveyResult">
 	
 		<div>
 			<form:label path="parkCode">Favorite National Park:</form:label>
@@ -17,16 +16,16 @@
 					<form:option value="${park.parkCode}">${park.parkName}</form:option>
 				</c:forEach>
 			</form:select>
-			<form:errors path="parkCode"/><br><br>
+			<form:errors path="parkCode" class="errors"/><br><br>
 		</div>
 			
-		<div>
+		<div class="form-format">
 			<form:label path="emailAddress">Your email:</form:label>
 			<form:input type="text" path="emailAddress"/>
-			<form:errors path="emailAddress"/><br><br>
+			<form:errors path="emailAddress" class="errors"/><br><br>
 		</div>
 		
-		<div>
+		<div class="form-format">
 			<form:label path="state">State of Residence:</form:label>
 			<form:select path="state" name="state">
 				<form:option value=""></form:option>
@@ -90,26 +89,27 @@
 				<form:option value="AP">Armed Forces Pacific</form:option>
 				<form:option value="AE">Armed Forces Others</form:option>					
 			</form:select>
-			<form:errors path="state"/>	<br><br>
+			<form:errors path="state" class="errors"/>	<br><br>
+		</div>
+		
+		<div class="form-format">
+			<p class="radio">Activity Level:</p>
+			<div class="radio">
+				<form:label class="radiobutton" path="activityLevel">Low
+				<form:radiobutton path="activityLevel" value="Low"/></form:label>
+				
+				<form:label class="radiobutton" path="activityLevel">Moderate
+				<form:radiobutton path="activityLevel" value="moderate"/></form:label>
+				
+				<form:label class="radiobutton" path="activityLevel">High
+				<form:radiobutton path="activityLevel" value="high"/></form:label>
+			
+				<form:errors path="activityLevel" class="errors"/><br><br>
+			</div>
 		</div>
 		
 		<div>
-			<p>Activity Level:</p>
-			
-			<form:label class="radiobutton" path="activityLevel">Low</form:label>
-			<form:radiobutton path="activityLevel" value="Low"/>
-			
-			<form:label class="radiobutton" path="activityLevel">Moderate</form:label>
-			<form:radiobutton path="activityLevel" value="moderate"/>
-			
-			<form:label class="radiobutton" path="activityLevel">High</form:label>
-			<form:radiobutton path="activityLevel" value="high"/>
-			
-			<form:errors path="activityLevel"/><br><br>
-		</div>
-		
-		<div>
-			<input name="submit" type="submit" value="Submit" />
+			<input name="submit" type="submit" id="submit" value="Submit" />
 		</div>
 	
 	</form:form>

@@ -15,7 +15,7 @@ public class SurveyResult {
 	private String parkCode;
 	
     @NotBlank(message="Email is required.")
-    @Email(message="Email must be a valid email address")
+    @Email(message="Email must be a valid email address.")
 	private String emailAddress;
     
     @NotBlank(message="State is required.")
