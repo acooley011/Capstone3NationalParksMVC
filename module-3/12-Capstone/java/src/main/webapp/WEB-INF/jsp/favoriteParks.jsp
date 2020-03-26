@@ -3,12 +3,12 @@
 
 <div class="body-content">
 
-	
+	<h1>Favorite Parks (Ordered from most to Least Favorite)</h1>
 	<c:forEach items="${favoriteParks}" var="survey">
 	<c:url value="/img/parks/${survey.key.parkCode.toLowerCase()}.jpg" var="parkPic" />
 		    	<img class="park-picture" src="${parkPic}">
-		<p>${survey.key.parkName}</p>
-		<p>${survey.value}</p>
+		<h3>${survey.key.parkName}</h3>
+		<p>Number of visitors who favorited: ${survey.value}</p>
 	</c:forEach>
 	
 </div>

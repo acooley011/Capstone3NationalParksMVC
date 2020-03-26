@@ -32,9 +32,7 @@ public class ParkDetailsController {
 		
 		Park park = parkDao.getParkInfoFromName(parkName);
 		List<Weather> weathers = weatherDAO.getWeatherFromPark(park.getParkCode());
-		
-		if(toggle.)
-		
+
 		model.addAttribute("park", park);
 		model.addAttribute("weathers", weathers);
 		

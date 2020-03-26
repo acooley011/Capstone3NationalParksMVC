@@ -38,8 +38,9 @@ public class JDBCSurveyResultDAO implements SurveyResultDAO {
 	@Override
 	public Map<Park, Integer> favoriteParkCount() {
 		Map<Park, Integer> favoriteParkCount = new HashMap<>();
-		String sqlGetParkCount = "SELECT park.parkname, survey_result.parkcode, COUNT(survey_result.parkcode) FROM survey_result JOIN"
-				+ " park ON park.parkcode = survey_result.parkcode GROUP BY survey_result.parkcode, park.parkname ORDER BY survey_result.parkcode, park.parkname";
+		String sqlGetParkCount = "SELECT park.parkname, survey_result.parkcode, COUNT(survey_result.parkcode) AS count FROM survey_result JOIN " + 
+					"park ON park.parkcode = survey_result.parkcode GROUP BY survey_result.parkcode, park.parkname ORDER BY " + 
+					"count DESC, park.parkname;";
 	
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetParkCount);
 		
