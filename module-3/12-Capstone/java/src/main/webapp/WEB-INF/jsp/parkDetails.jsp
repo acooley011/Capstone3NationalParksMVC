@@ -61,7 +61,7 @@
 		    					<p>Friday Low: ${weather.low }</p>
 		    					<p> High: ${weather.high }</p>
 		    					<p> Forecast: ${weather.forecast }</p>
-		    					<c:url value="/img/weather/${weather.forecast }.png" var="forecastpic" />
+		    					<c:url value="/img/weather/${weather.forecast}.png" var="forecastpic" />
 		    					<img class="forecast-picture" src="${forecastpic}">
 	    					</c:otherwise>
 		    			</c:choose>

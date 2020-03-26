@@ -1,7 +1,9 @@
 package com.techelevator.npgeek.JDBC;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.sql.DataSource;
 
@@ -10,6 +12,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+import com.techelevator.npgeek.Park;
 import com.techelevator.npgeek.SurveyResult;
 import com.techelevator.npgeek.SurveyResultDAO;
 
@@ -50,6 +53,19 @@ public class JDBCSurveyResultDAO implements SurveyResultDAO {
 		}
 		
 		return allSurveys;
+	}
+
+	@Override
+	public Map<Park, Integer> favoriteParkCount(String parkCode) {
+		Map<Park, Integer> favoriteParkCount = new HashMap<>();
+		String sqlGetParkCount = "SELECT parkcode, COUNT(parkcode) FROM survey_result GROUP BY parkcode";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetParkCount);
+		
+		while(results.next()) {
+			favoriteParkCount.put(key, value)
+		}
+		
+		return null;
 	}
 
 	
