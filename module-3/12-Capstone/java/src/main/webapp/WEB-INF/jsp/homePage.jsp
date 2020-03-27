@@ -15,6 +15,7 @@
 		    	<div class="description">
 		    	
 		    		<h1 class="home-name">${park.parkName}</h1>
+		    		<h3 class="home-description"><b>${park.state}</b></h3>
 		    		<p class="home-description">${park.parkDescription}</p>
 		    	</div>
 			</div>

@@ -8,7 +8,7 @@
 	<c:url value="/survey" var="surveyURL"/>
 	<form:form class="form" action="${surveyURL}" method="POST" modelAttribute="surveyResult">
 	
-		<div>
+		<div class="form-format">
 			<form:label path="parkCode">Favorite National Park:</form:label>
 			<form:select path="parkCode" name="parkCode" size="1">		
 				<form:option value=""></form:option>	
@@ -95,14 +95,18 @@
 		<div class="form-format">
 			<p class="radio">Activity Level:</p>
 			<div class="radio">
-				<form:label class="radiobutton" path="activityLevel">Low
-				<form:radiobutton path="activityLevel" value="Low"/></form:label>
+			
+				<form:label path="activityLevel">
+				<form:radiobutton path="activityLevel" value="inactive"/>Inactive</form:label>
 				
-				<form:label class="radiobutton" path="activityLevel">Moderate
-				<form:radiobutton path="activityLevel" value="moderate"/></form:label>
+				<form:label path="activityLevel">
+				<form:radiobutton path="activityLevel" value="sedentary"/>Sedentary</form:label>
 				
-				<form:label class="radiobutton" path="activityLevel">High
-				<form:radiobutton path="activityLevel" value="high"/></form:label>
+				<form:label  path="activityLevel">
+				<form:radiobutton path="activityLevel" value="active"/>Active</form:label>
+			
+				<form:label  path="activityLevel">
+				<form:radiobutton path="activityLevel" value="extremely active"/>Extremely Active</form:label>
 			
 				<form:errors path="activityLevel" class="errors"/><br><br>
 			</div>

@@ -109,8 +109,10 @@ li {
 }
 }
 
-form:radiobutton {
-	display: inline;
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 form:label {
@@ -119,8 +121,18 @@ form:label {
     width: 260px;
 }
 
+.form-format {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
 .radio {
-	display: inline;
+
+}
+
+input[type="radiobutton"] {
+	float: left;
 }
 
 input[type=text] {
