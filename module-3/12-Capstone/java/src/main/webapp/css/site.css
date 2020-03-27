@@ -177,6 +177,7 @@ input[type=text] {
 .weather {
 	display: flex;
 	flex-direction: row;
+	width: 100%;
 }
 
 .weather-toggle-today {
@@ -184,6 +185,7 @@ input[type=text] {
 	justify-content: center;
 	align-items: center;
 	flex-direction:column;
+	width: 10%;
 }
 
 .det {
@@ -202,6 +204,14 @@ input[type=text] {
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+}
+
+.other {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 90%;
 }
 
 .quote {
