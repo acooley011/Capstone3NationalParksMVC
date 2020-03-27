@@ -1,7 +1,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
-<html>
+<html><link href="https://fonts.googleapis.com/css?family=Francois+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Alex+Brush&display=swap" rel="stylesheet">
+
+
 
 <head>
     <meta charset="utf-8" />
@@ -27,3 +30,5 @@
             <a class="nav-links" href="${survey}">Survey</a>
         </div>
     </div>
+    
+ 

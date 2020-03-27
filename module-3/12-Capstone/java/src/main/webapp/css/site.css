@@ -144,6 +144,21 @@ input[type=text] {
 
 .more-info {
 	display: flex;
+	flex-direction: row;
+}
+
+.flex {
+	display: grid;
+	align-items: start;
+	width: 100%;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-row-gap: 10px; 
+}
+
+.quote {
+	text-align: center;
+	font-family: 'Alex Brush', cursive;
+	font-size: 26px;
 }
 
 .panel {

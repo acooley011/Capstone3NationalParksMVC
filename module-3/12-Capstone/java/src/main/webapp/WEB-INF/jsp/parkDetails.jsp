@@ -1,39 +1,43 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
-<link href="https://fonts.googleapis.com/css?family=Francois+One&display=swap" rel="stylesheet">
-
 
 <div class="body-content">
 	<div>
-		<div class="park-picture-details">
+		<div>
 			<c:url value="/img/parks/${park.parkCode.toLowerCase()}.jpg" var="parkPic" />
-		    	<img src="${parkPic}">
+		    	<img class="park-picture-details" src="${parkPic}">
 	    </div>	
 	    <div class="description">
 	    	
     		<h1 class="home-name details-block">${park.parkName}</h1>
     		<p class="home-description details-block">${park.parkDescription}</p>
     		
-	    	<div class="more-info">
+	    	<div>
+	    	
+	    		<div class="flex">
 	    		
-	    		<p class="home-description">State: ${park.state}</p>
-	    		<p class="home-description">Acres: ${park.acreage}</p>
-	    		<p class="home-description">Elevation (ft): ${park.elevationInFeet}</p>
-	    		<p class="home-description">Miles of Trail: ${park.milesOfTrail}</p>
-	    		<p class="home-description">Number of Campsites: ${park.numberOfCampsites}</p>
-	    		<p class="home-description">Climate: ${park.climate}</p>
-	    		<p class="home-description">Year Founded: ${park.yearFounded}</p>
-	    		<p class="home-description">Annual Visitor Count: ${park.annualVisitorCount}</p>
+		    		<p class="home-description"><b>State:</b> ${park.state}</p>
+		    		<p class="home-description"><b>Acres:</b> ${park.acreage}</p>
+		    		<p class="home-description"><b>Elevation (ft):</b> ${park.elevationInFeet}</p>
+		    		<p class="home-description"><b>Miles of Trail:</b> ${park.milesOfTrail}</p>
+		    		<p class="home-description"><b>Number of Campsites:</b> ${park.numberOfCampsites}</p>
 	    		
-    		</div>
-    		
-    		<p class="home-description">Inspirational Quote: ${park.inspirationalQuote}</p>
-    		
-    		
-    		<p class="home-description"><pre>(Source): ${park.inspirationalQuoteSource}</pre>
-    		<p class="home-description">Entry Fee: $${park.entryFee}</p>
-    		<p class="home-description">Number of Animal Species: ${park.numberOfAnimalSpecies}</p>
-    		
+	    		</div>
+	    		
+	    		<div class="flex">
+	    		
+		    		<p class="home-description"><b>Climate:</b> ${park.climate}</p>
+		    		<p class="home-description"><b>Year Founded:</b> ${park.yearFounded}</p>
+		    		<p class="home-description"><b>Annual Visitor Count:</b> ${park.annualVisitorCount}</p>
+		    		<p class="home-description"><b>Entry Fee:</b> $${park.entryFee}</p>
+		    		<p class="home-description"><b>Number of Animal Species:</b> ${park.numberOfAnimalSpecies}</p>
+		    	
+		    	</div>
+		    		
+    		</div>		
+     		    		
+    		<p class="home-description quote">${park.inspirationalQuote}<br>&mdash;${park.inspirationalQuoteSource}</p>
+	   
 	    </div>
 	    
 	    
