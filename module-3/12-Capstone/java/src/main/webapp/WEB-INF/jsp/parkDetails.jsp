@@ -43,8 +43,26 @@
 	    
     	<div class="weather">
     		<h4 class="home-name">Weather Forecast for ${park.parkName}</h4>
-    		<c:url value="/parkDetails" var="parkDetails" />
-    		
+    		<c:url value="/park-details/${park.parkName}" var="parkDetails" />
+    		<form method="GET" action="${parkDetails}">
+    			<label for="F">Fahrenheit
+    				<c:if test="${empty toggleTemp || toggleTemp == false}">
+    					<c:set var="fChecked" value="checked" />
+    				</c:if>
+    				<input type="radio" id="F" name="toggleTemp"  value="false" ${fChecked }/>
+    			</label>
+    			
+    			 <label for="C">Celcius
+    				<c:if test="${toggleTemp == true}">
+    					<c:set var="cChecked" value="checked" />
+    				</c:if>
+    				<input type="radio" id="C" name="toggleTemp" value="true" ${cChecked }/>
+    			</label>
+    			
+    			<button type="submit">Change Temp</button>
+    		</form>
+    		 	
+    		    		
     		<c:forEach var= "weather" items="${weathers }">
     			<c:choose>
     				<c:when test="${weather.fiveDayForecastValue == 1}">

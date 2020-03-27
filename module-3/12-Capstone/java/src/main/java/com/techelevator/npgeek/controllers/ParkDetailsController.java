@@ -28,9 +28,11 @@ public class ParkDetailsController {
 	WeatherDAO weatherDAO;
 
 	@RequestMapping(path="/park-details/{parkName}", method=RequestMethod.GET)
-	public String displayParkDetails(HttpServletRequest request, 
+	public String displayParkDetails(
 			@RequestParam(name = "toggleTemp", defaultValue = "false") Boolean toggleTemp,
 			@PathVariable String parkName, ModelMap model) {
+		
+		model.put("toggleTemp", toggleTemp);
 		
 		Park park = parkDao.getParkInfoFromName(parkName);
 		model.addAttribute("park", park);
@@ -47,8 +49,8 @@ public class ParkDetailsController {
 				
 				newWeather.setParkCode(weather.getParkCode());
 				newWeather.setFiveDayForecastValue(weather.getFiveDayForecastValue());
-				newWeather.setLow((weather.getLow()-32) * (5/9));
-				newWeather.setHigh((weather.getHigh()-32) * (5/9));
+				newWeather.setLow((int)((weather.getLow()-32F) * (5F/9F)));
+				newWeather.setHigh((int)((weather.getHigh()-32F) * (5F/9F)));
 				newWeather.setForecast(weather.getForecast());
 				
 				weathersCelcius.add(newWeather);
