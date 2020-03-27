@@ -79,6 +79,13 @@ li {
 	border-radius: 5px;
 }
 
+.details-block {
+	display: block;
+	text-align: left;
+}
+
+
+
 .home-name {
 
 	font-family: 'Francois One', sans-serif;
@@ -135,7 +142,9 @@ input[type=text] {
 	color: red;
 }
 
-
+.more-info {
+	display: flex;
+}
 
 .panel {
   font: 16px "Open Sans", Helvetica, Arial, sans-serif;
