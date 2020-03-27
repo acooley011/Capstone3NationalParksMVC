@@ -159,12 +159,49 @@ input[type=text] {
 	flex-direction: row;
 }
 
+.flex-details {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
 .flex {
-	display: grid;
+	display: flex;
+	flex-direction: row;
 	align-items: start;
 	width: 100%;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	grid-row-gap: 10px; 
+	flex-wrap: wrap;
+}
+
+.weather {
+	display: flex;
+	flex-direction: row;
+}
+
+.weather-toggle-today {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction:column;
+}
+
+.det {
+	width: 20%; 
+}
+
+.today-temp-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.high-low {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 
 .quote {
