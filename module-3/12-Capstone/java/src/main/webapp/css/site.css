@@ -107,9 +107,17 @@ li {
 	background-color: #edf2f5;
 	color: #444;
 }
+
+.radio {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 500px;
+	
 }
 
-form {
+.form-overall {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -121,14 +129,20 @@ form:label {
     width: 260px;
 }
 
+.select {
+	width: 260px;
+	    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
 .form-format {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
 }
 
-.radio {
-
+form:errors {
+	width: 20%;
 }
 
 input[type="radiobutton"] {
@@ -138,11 +152,21 @@ input[type="radiobutton"] {
 input[type=text] {
     border: 2px solid #ccc;
     border-radius: 5px;
-    width: 260px;
+    width: 257px;
 }
 
-#submit {
+.submit-temp {
     padding:5px 15px; 
+    background: #3d3d3d;
+    color: white;
+    border:0 none;
+    cursor:pointer;
+    border-radius: 5px;
+}
+
+.submit {
+    padding:5px 15px; 
+    margin-top: 50px;
     background: #3d3d3d;
     color: white;
     border:0 none;
@@ -185,11 +209,29 @@ input[type=text] {
 	justify-content: center;
 	align-items: center;
 	flex-direction:column;
-	width: 10%;
+	width: 25%;
+}
+
+.formmm {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;	
+}
+
+.toggle-buttons {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .det {
 	width: 20%; 
+}
+
+.forecast-picture-today {
+	width: 70%;
 }
 
 .today-temp-info {
@@ -202,6 +244,17 @@ input[type=text] {
 .high-low {
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.forecast-picture {
+	width: 50%;
+}
+
+.other-info {
+	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
@@ -237,6 +290,16 @@ h4 {
   margin-top: 0;
   font-size: 175%;
 }
+
+.other-days {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 75%;
+	object-fit: contain;
+}
+	
 
 .park-favorites {
 	display: flex;

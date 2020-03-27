@@ -5,12 +5,16 @@
 
 <div class="body-content">
 
+	<h1>Enjoyed your visit?</h1>
+	<p>Please fill out our survey!</p><br><br>
+
 	<c:url value="/survey" var="surveyURL"/>
-	<form:form class="form" action="${surveyURL}" method="POST" modelAttribute="surveyResult">
+	<form:form class="form-overall" action="${surveyURL}" method="POST" modelAttribute="surveyResult">
 	
 		<div class="form-format">
 			<form:label path="parkCode">Favorite National Park:</form:label>
-			<form:select path="parkCode" name="parkCode" size="1">		
+			
+			<form:select class="select" path="parkCode" name="parkCode" size="1">		
 				<form:option value=""></form:option>	
 				<c:forEach items="${parks}" var="park">
 					<form:option value="${park.parkCode}">${park.parkName}</form:option>
@@ -27,7 +31,7 @@
 		
 		<div class="form-format">
 			<form:label path="state">State of Residence:</form:label>
-			<form:select path="state" name="state">
+			<form:select class="select" path="state" name="state">
 				<form:option value=""></form:option>
 				<form:option value="AL">Alabama</form:option>
 				<form:option value="AK">Alaska</form:option>
@@ -108,12 +112,12 @@
 				<form:label  path="activityLevel">
 				<form:radiobutton path="activityLevel" value="extremely active"/>Extremely Active</form:label>
 			
-				<form:errors path="activityLevel" class="errors"/><br><br>
 			</div>
+				<form:errors path="activityLevel" class="errors"/>
 		</div>
 		
 		<div>
-			<input name="submit" type="submit" id="submit" value="Submit" />
+			<input name="submit" type="submit" class="submit" value="Submit" />
 		</div>
 	
 	</form:form>
