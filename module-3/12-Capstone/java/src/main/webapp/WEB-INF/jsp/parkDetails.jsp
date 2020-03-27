@@ -47,6 +47,7 @@
     		<form method="GET" action="${parkDetails}">
     			<label for="F">Fahrenheit
     				<c:if test="${empty toggleTemp || toggleTemp == false}">
+    					<c:set var="temp" value="F"/>
     					<c:set var="fChecked" value="checked" />
     				</c:if>
     				<input type="radio" id="F" name="toggleTemp"  value="false" ${fChecked }/>
@@ -54,6 +55,7 @@
     			
     			 <label for="C">Celcius
     				<c:if test="${toggleTemp == true}">
+    					<c:set var="temp" value="C"/>
     					<c:set var="cChecked" value="checked" />
     				</c:if>
     				<input type="radio" id="C" name="toggleTemp" value="true" ${cChecked }/>
@@ -66,36 +68,36 @@
     		<c:forEach var= "weather" items="${weathers }">
     			<c:choose>
     				<c:when test="${weather.fiveDayForecastValue == 1}">
-    					<p>Monday Low: ${weather.low }F</p>
-    					<p> High: ${weather.high }F</p>
+    					<p>Monday Low: ${weather.low }&#176;${temp}</p>
+    					<p> High: ${weather.high }&#176;${temp}</p>
     					<p> Forecast: ${weather.forecast }</p>
     					<c:url value="/img/weather/${weather.forecast }.png" var="forecastpic" />
     					<img class="forecast-picture" src="${forecastpic}">
    					</c:when>
    					<c:when test="${weather.fiveDayForecastValue == 2 }">
-						<p>Tuesday Low: ${weather.low }F</p>
-    					<p> High: ${weather.high }F</p>
+						<p>Tuesday Low: ${weather.low }&#176;${temp}</p>
+    					<p> High: ${weather.high }&#176;${temp}</p>
     					<p> Forecast: ${weather.forecast }</p>
     					<c:url value="/img/weather/${weather.forecast }.png" var="forecastpic" />
     					<img class="forecast-picture" src="${forecastpic}">	    					
     				</c:when>
    					<c:when test="${weather.fiveDayForecastValue == 3 }">
-    					<p>Wednesday Low: ${weather.low }F</p>
-    					<p> High: ${weather.high }F</p>
+    					<p>Wednesday Low: ${weather.low}&#176;${temp}</p>
+    					<p> High: ${weather.high }&#176;${temp}</p>
     					<p> Forecast: ${weather.forecast }</p>
     					<c:url value="/img/weather/${weather.forecast }.png" var="forecastpic" />
     					<img class="forecast-picture" src="${forecastpic}">
    					</c:when>
    					<c:when test="${weather.fiveDayForecastValue == 4 }">
-    					<p>Thursday Low: ${weather.low }F</p>
-    					<p> High: ${weather.high }F</p>
+    					<p>Thursday Low: ${weather.low }&#176;${temp}</p>
+    					<p> High: ${weather.high }&#176;${temp}</p>
     					<p> Forecast: ${weather.forecast }</p>
     					<c:url value="/img/weather/${weather.forecast }.png" var="forecastpic" />
     					<img class="forecast-picture" src="${forecastpic}">
    					</c:when>
    					<c:otherwise >
-    					<p>Friday Low: ${weather.low }F</p>
-    					<p> High: ${weather.high }F</p>
+    					<p>Friday Low: ${weather.low }&#176;${temp}</p>
+    					<p> High: ${weather.high }&#176;${temp}</p>
     					<p> Forecast: ${weather.forecast }</p>
     					<c:url value="/img/weather/${weather.forecast}.png" var="forecastpic" />
     					<img class="forecast-picture" src="${forecastpic}">
