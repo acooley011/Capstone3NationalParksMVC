@@ -1,6 +1,7 @@
 package com.techelevator.npgeek.JDBC;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import javax.sql.DataSource;
@@ -37,9 +38,9 @@ public class JDBCSurveyResultDAO implements SurveyResultDAO {
 
 	@Override
 	public Map<Park, Integer> favoriteParkCount() {
-		Map<Park, Integer> favoriteParkCount = new HashMap<>();
-		String sqlGetParkCount = "SELECT park.parkname, survey_result.parkcode, COUNT(survey_result.parkcode) FROM survey_result JOIN"
-				+ " park ON park.parkcode = survey_result.parkcode GROUP BY survey_result.parkcode, park.parkname ORDER BY survey_result.parkcode, park.parkname";
+		Map<Park, Integer> favoriteParkCount = new LinkedHashMap<>();
+		String sqlGetParkCount = "SELECT park.parkname, survey_result.parkcode, COUNT(survey_result.parkcode) FROM survey_result JOIN park ON park.parkcode = survey_result.parkcode " + 
+				"GROUP BY park.parkname, survey_result.parkcode ORDER BY COUNT(survey_result.parkcode) DESC, park.parkname ASC";
 	
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetParkCount);
 		

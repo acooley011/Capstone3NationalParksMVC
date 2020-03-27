@@ -3,13 +3,38 @@
 
 <div class="body-content">
 
+	<h1>Favorite Parks</h1>
 	
-	<c:forEach items="${favoriteParks}" var="survey">
-	<c:url value="/img/parks/${survey.key.parkCode.toLowerCase()}.jpg" var="parkPic" />
-		    	<img class="park-picture" src="${parkPic}">
-		<p>${survey.key.parkName}</p>
-		<p>${survey.value}</p>
-	</c:forEach>
+	<p>Thanks for submitting our survey! Check out this list of our visitors' favorite parks.</p>
+	
+	<div id="park-favorites">	
+		
+		<c:forEach items="${favoriteParks}" var="survey">
+		<c:url value="/img/parks/${survey.key.parkCode.toLowerCase()}.jpg" var="parkPic" />
+		
+		<div>
+			<img class="park-picture" src="${parkPic}">
+		</div>
+		
+		<div>
+			<h3>${survey.key.parkName}</h3>
+		</div>
+		
+		<div class="rating">
+			<c:url value="/img/fav.png" var="fav" />
+			<p class="survey-value">${survey.value}</p>
+			<img class="fav" src="${fav}">
+		</div>
+		
+		<div></div>
+		
+		<div></div>
+		
+		</c:forEach>
+		
+	
+		
+	</div>
 	
 </div>
 

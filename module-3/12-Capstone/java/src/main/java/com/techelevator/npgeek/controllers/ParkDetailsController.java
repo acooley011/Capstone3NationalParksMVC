@@ -1,5 +1,6 @@
 package com.techelevator.npgeek.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -27,16 +28,36 @@ public class ParkDetailsController {
 	WeatherDAO weatherDAO;
 
 	@RequestMapping(path="/park-details/{parkName}", method=RequestMethod.GET)
-	public String displayParkDetails(HttpServletRequest request, @PathVariable String parkName, ModelMap model,
-			@RequestParam String toggle) {
+	public String displayParkDetails(HttpServletRequest request, 
+			@RequestParam(name = "toggleTemp", defaultValue = "false") Boolean toggleTemp,
+			@PathVariable String parkName, ModelMap model) {
 		
 		Park park = parkDao.getParkInfoFromName(parkName);
+		model.addAttribute("park", park);
+		
 		List<Weather> weathers = weatherDAO.getWeatherFromPark(park.getParkCode());
 		
-		if(toggle.)
-		
-		model.addAttribute("park", park);
-		model.addAttribute("weathers", weathers);
+		if(toggleTemp == false) {
+			model.addAttribute("weathers", weathers);
+		} else {			
+			List<Weather> weathersCelcius = new ArrayList<Weather>();
+			
+			for(Weather weather : weathers) {
+				Weather newWeather = new Weather();
+				
+				newWeather.setParkCode(weather.getParkCode());
+				newWeather.setFiveDayForecastValue(weather.getFiveDayForecastValue());
+				newWeather.setLow((weather.getLow()-32) * (5/9));
+				newWeather.setHigh((weather.getHigh()-32) * (5/9));
+				newWeather.setForecast(weather.getForecast());
+				
+				weathersCelcius.add(newWeather);
+				model.addAttribute("weathers", weathersCelcius);
+			}
+			
+		}
+
+		toggleTemp = !toggleTemp;					
 		
 		return "parkDetails";
 	}

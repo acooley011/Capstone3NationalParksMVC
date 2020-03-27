@@ -22,6 +22,9 @@ public class HomePageController {
 		
 		List<Park> parks = parkDao.getAllParks();
 		
+		boolean temperatureC = false;
+		
+		model.addAttribute("temperatureC", temperatureC);
 		model.addAttribute("parks", parks);
 		
 		return "homePage";

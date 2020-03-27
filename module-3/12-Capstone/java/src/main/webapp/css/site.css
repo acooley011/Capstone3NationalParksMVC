@@ -71,6 +71,7 @@ li {
 
 .park-picture {
 	width: 93%;
+	border-radius: 5px;
 }
 
 .park-picture-details {
@@ -132,6 +133,50 @@ input[type=text] {
 
 .errors {
 	color: red;
+}
+
+
+
+.panel {
+  font: 16px "Open Sans", Helvetica, Arial, sans-serif;
+  border: 1px solid #22d;
+  padding: 12px;
+  width: 500px;
+  text-align: center;
+}
+
+.button {
+  font: 22px "Open Sans", Helvetica, Arial, sans-serif;
+  padding: 5px 36px;
+}
+
+h4 {
+  margin-top: 0;
+  font-size: 175%;
+}
+
+#park-favorites {
+	padding-top: 25px;
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+	grid-gap: 10px;
+  	color: #444;
+  	justify-content: center;
+}
+
+.rating {
+	vertical-align: center;
+	display: inline;
+	align-content: center;
+}
+
+.fav {
+	width: 20%;
+	display: inline;
+}
+
+.survey-value {
+	display: inline;
 }
 
 .switch {
